@@ -1,16 +1,17 @@
 import './App.css';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import { BrowserRouter as Routes , Router, Route} from  'react-router-dom'
 import Navbar from './components/Navbar';
+import Booking from './User/Booking';
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Booking/>
+      {/* <Navbar/>
       <About/>
       
-      {/* <Home/> */}
+      <Home/> */}
      
     </div>
   
