@@ -7,9 +7,10 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div>
-      
       <Navbar/>
-      <Home/>
+      <About/>
+      
+      {/* <Home/> */}
      
     </div>
   
