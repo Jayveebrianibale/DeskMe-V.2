@@ -36,7 +36,7 @@ function Booking() {
             </div>
 
             <div className='flex font-bold text-2xl pb-8 pl-10 '>
-                <button className='flex text-2xl gap-3 mt-48'>
+                <button className='flex text-2xl gap-3 mt-60'>
                     <p className='text-4xl'><RiLogoutCircleRLine /></p>
                     <h1>Sign-out</h1>
                 </button>

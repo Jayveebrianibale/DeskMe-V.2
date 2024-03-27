@@ -3,11 +3,13 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Navbar from './components/Navbar';
 import Booking from './User/Booking';
+import Login from './Auth/Login';
 
 function App() {
   return (
     <div>
-      <Booking/>
+      <Login/>
+      {/* <Booking/> */}
       {/* <Navbar/>
       <About/>
       
