@@ -4,11 +4,13 @@ import About from './Pages/About';
 import Navbar from './components/Navbar';
 import Booking from './User/Booking';
 import Login from './Auth/Login';
+import Authenticate from './Auth/Authenticate';
 
 function App() {
   return (
     <div>
-      <Login/>
+      <Authenticate/>
+      {/* <Login/> */}
       {/* <Booking/> */}
       {/* <Navbar/>
       <About/>
