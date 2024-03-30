@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HiOutlineXMark } from "react-icons/hi2";
-import { PiShieldWarningBold } from "react-icons/pi";
+import { PiShieldWarningBold } from "react-icons/pi";   
 
 function Authenticate() {
   const [code, setCode] = useState('');
@@ -18,7 +18,7 @@ function Authenticate() {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center mt-40 mb-40'>
+    <div className='flex flex-col justify-center items-center mt-5 mb-5'>
       <div className='box-border border-2 w-[500px] h-[640px] border-black rounded-xl'>
         <div>
             <div className='ml-12 pb-3'>

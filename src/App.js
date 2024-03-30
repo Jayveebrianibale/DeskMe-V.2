@@ -5,17 +5,19 @@ import Navbar from './components/Navbar';
 import Booking from './User/Booking';
 import Login from './Auth/Login';
 import Authenticate from './Auth/Authenticate';
+import AuthenticateSuccess from './Auth/AuthenticateSuccess';
 
 function App() {
   return (
     <div>
-      <Authenticate/>
+      {/* <AuthenticateSuccess/> */}
+      {/* <Authenticate/> */}
       {/* <Login/> */}
-      {/* <Booking/> */}
+      <Booking/>
       {/* <Navbar/>
-      <About/>
+      <About/> */}
       
-      <Home/> */}
+      {/* <Home/> */}
      
     </div>
   
