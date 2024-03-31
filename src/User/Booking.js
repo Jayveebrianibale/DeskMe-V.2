@@ -7,15 +7,21 @@ import { PiArrowUDownRightLight } from "react-icons/pi";
 import { BiMoon } from "react-icons/bi";
 import { GrNotification } from "react-icons/gr";
 import { LuUserSquare } from "react-icons/lu";
+import { PiDesktopTowerBold } from "react-icons/pi";
+import { PiWarning } from "react-icons/pi";
+import { CiSquarePlus } from "react-icons/ci"; 
+import { CiSquareMinus } from "react-icons/ci";
+
+
 
 function Booking() {
   return (
-    <div className='bg-gray-200 '>
+    <div className='bg-gray-100 bg-repeat'>
         <div className='flex flex-row-reverse gap-10'>
 
             <div className='border-t-2 w-[80%] h-[85px] bg-white rounded-es-2xl'>
                 <div className='flex gap-5 justify-between'>
-                    <h1 className='text-3xl font-black pl-5 pt-7'>Dashboard</h1>
+                    <h1 className='text-3xl font-black pl-5 pt-8'>Booking</h1>
                     <div className='flex gap-3 mr-8'>
                         <div className='flex gap-2 pt-5'> 
                             <button className="text-black text-2xl"><BiMoon /></button>
@@ -32,10 +38,60 @@ function Booking() {
                         </div>
                     </div>
                 </div>
+                <div className='flex gap-5'>
 
+                    <div className='pt-10'>
+                        <div className='border w-60 h-32 rounded-xl bg-[linear-gradient(90deg,_#FFFFFF_0%,_#B3C4FF_100%)] [box-shadow:0px_4px_4px_0px_#0000001A]'>
+                            <div className='flex justify-center items-center pt-8 gap-5'>
+                                <div>
+                                    <h1 className='text-2xl font-bold'>50</h1>
+                                    <p className='font-medium'>Available Desks</p>
+                                </div>
+                                <h1 className='text-4xl pt-5'><PiDesktopTowerBold /></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='pt-10'>
+                        <div className='border w-60 h-32 rounded-xl bg-[linear-gradient(90deg,_#FFFFFF_0%,_#FFC5C5_97.09%)] [box-shadow:0px_4px_4px_0px_#0000001A]'>
+                            <div className='flex justify-center items-center pt-8 gap-5'>
+                                <div>
+                                    <h1 className='text-2xl font-bold'>10</h1>
+                                    <p className='font-medium'>Unavailable Desks</p>
+                                </div>
+                                <h1 className='text-4xl pt-5'><PiWarning /></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='pt-3'>
+                    <h1 className='text-2xl font-black'>Book a Desk</h1>
+                </div>
+
+                <div className='pt-2'>
+                    <div className='border w-[1000px] h-[500px] bg-white rounded-xl [box-shadow:0px_4px_4px_0px_#0000001A]'>
+                      <div className='flex pt-6 pl-6'>
+                        <div className='border-[0.5px] border-[solid] border-[#000000] w-[500px] h-[450px] rounded-xl'>
+                            <div className=' flex flex-col text-2xl pt-3 pl-3'>
+                                <button><CiSquarePlus /></button>
+                                <button><CiSquareMinus /></button>
+                            </div>
+                            <h1 className='text-center font-bold mt-44'>Map</h1>
+                        </div>
+
+                        <div>
+
+                        </div>
+                      </div>
+                      
+                    </div>
+                </div>
+               
+                
             </div>
-
-            <div className='border-l-2 border-black w-72 h-[650px] bg-white'>
+           
+            <div className='border-l-2 border-black w-72 h-[800px] bg-white'>
                 <div>
                     <img className='w-44 pb-10 ml-8' src={Logo}/>
                 </div>
@@ -62,7 +118,7 @@ function Booking() {
                 </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10 '>
-                    <button className='flex text-2xl gap-3 mt-52'>
+                    <button className='flex text-2xl gap-3 mt-96'>
                         <p className='text-4xl'><PiArrowUDownRightLight /></p>
                         <h1>Sign-out</h1>
                     </button>

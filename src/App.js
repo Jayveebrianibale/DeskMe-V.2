@@ -6,6 +6,7 @@ import Booking from './User/Booking';
 import Login from './Auth/Login';
 import Authenticate from './Auth/Authenticate';
 import AuthenticateSuccess from './Auth/AuthenticateSuccess';
+import Dashboard from './User/Dashboard';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       {/* <AuthenticateSuccess/> */}
       {/* <Authenticate/> */}
       {/* <Login/> */}
+      {/* <Dashboard/> */}
       <Booking/>
       {/* <Navbar/>
       <About/> */}
