@@ -72,17 +72,44 @@ function Booking() {
                 <div className='pt-2'>
                     <div className='border w-[1000px] h-[500px] bg-white rounded-xl [box-shadow:0px_4px_4px_0px_#0000001A]'>
                       <div className='flex pt-6 pl-6'>
-                        <div className='border-[0.5px] border-[solid] border-[#000000] w-[500px] h-[450px] rounded-xl'>
-                            <div className=' flex flex-col text-2xl pt-3 pl-3'>
-                                <button><CiSquarePlus /></button>
-                                <button><CiSquareMinus /></button>
+                         <div className='border-[0.5px] border-[solid] border-[#000000] w-[500px] h-[450px] rounded-xl'>
+                             <div className=' flex flex-col text-2xl pt-3 pl-3'>
+                                 <button><CiSquarePlus /></button>
+                                 <button><CiSquareMinus /></button>
+                             </div>
+                             <h1 className='text-center font-bold mt-44'>Map</h1>
+                         </div>
+
+                         <div>
+                            <div className=' text-center ml-40'>
+                                <h1 className='text-xl font-bold pb-3'>Date</h1>
+                                <div>
+                                    <h1 className='pb-2'>Select Date:</h1>
+                                </div>
+                                <div>
+                                    <button className='border border-none bg-[#F8F8F8] w-[100%] rounded-lg px-10 py-2 font-bold'>Check In</button>
+                                </div>
+
+                                <div>
+                                    <h1 className='pb-2 pt-5'>Select Date:</h1>
+                                </div>
+                                <div>
+                                    <button className='border border-none bg-[#F8F8F8] w-[100%] rounded-lg px-10 py-2 font-bold'>Check Out</button>
+                                </div>
                             </div>
-                            <h1 className='text-center font-bold mt-44'>Map</h1>
-                        </div>
+                            <div className='border-b-2 bg-gray-800 mt-5 mb-3 w-[100%] ml-20'></div>
 
-                        <div>
+                            <div className='border w-[80%] h-[100px] bg-white rounded-xl [box-shadow:0px_4px_4px_0px_#0000001A] ml-28'>
+                                <div>
+                                    <h1 className='text-2xl font-black text-center pt-2'>Information</h1>
+                                </div>
+                            </div>
 
-                        </div>
+                            <div>
+                                <button className='text-white mt-5 bg-black font-semibold rounded-lg text-sm px-5 py-2.5 md:px-6 md:py-3 lg:text-base ml-40 lg:px-7 xl:text-lg xl:px-8 xl:py-4'>Book Now</button>    
+                            </div>
+                         </div>
+
                       </div>
                       
                     </div>
