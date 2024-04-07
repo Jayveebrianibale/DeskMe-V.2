@@ -15,13 +15,14 @@ import { PiFigmaLogoBold } from "react-icons/pi";
 import { SiTailwindcss } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithubSquare } from "react-icons/fa";
+import Navbar from '../components/Navbar'
 
 
 function About()  { 
   return (
-    <div className='mt-16'>
-
-      <div className='ml-56 pb-4'>
+    <div>
+      <Navbar/>
+      <div className='ml-56 mt-10 pb-4'>
         <h1 className='font-black text-5xl'>About</h1>
       </div>
 

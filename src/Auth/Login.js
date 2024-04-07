@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HiOutlineXMark } from "react-icons/hi2";
 import { FcGoogle } from "react-icons/fc";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [password, setPassword] = useState('');
@@ -15,9 +16,15 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/authenticate');
+  };
+
   return (
-    <div className='flex-col flex justify-center items-center mt-40 mb-40'>
-      <div className='box-border border-2 w-[500px] h-[620px] border-black rounded-xl'>
+    <div className='flex-col flex justify-center items-center mt-12'>
+      <div className='box-border border-2 w-[500px] h-[500px] border-black rounded-xl'>
         <div>
             <div className='ml-12 pb-16'>
                 <button className='ml-[415px] text-2xl pt-3'><HiOutlineXMark /></button>
@@ -44,26 +51,11 @@ function Login() {
             </div>
 
             <div className='text-center pt-10 pb-5'>
-                <button className=' text-white bg-black font-semibold rounded-full text-xl py-3 w-[80%] '>Sign in</button>
-            </div>
-
-            <div className='flex justify-center gap-5'>
-                <div className='border-b border-gray-500 w-[35%] '></div>
-                <h1 className='text-xl font-light'>or</h1>
-                <div className='border-b border-gray-500 w-[35%] '></div>
-            </div>
-           
-            <div className='text-center pt-10 pb-5'>
-                <button className=' text-bold border-black bg-gray-200 border font-semibold rounded-full text-xl py-3 w-[80%] '>
-                <div className='flex justify-center gap-2'>
-                    <h1 className='pt-1'><FcGoogle /></h1>
-                    <h1>Sign in with Google</h1>
-                </div>
-                </button>
+                <button onClick={handleClick} className=' text-white bg-black font-semibold rounded-full text-xl py-3 w-[80%] '>Sign in</button>
             </div>
         </div>
       </div>
-        <div className='text-center text-xl font-light pt-3'>
+        <div className='text-center font-light pt-3'>
             <h1><span>&#169;</span>2023 DeskMe, All right reserved. Privacy Policy <br/> and Terms & Conditions.</h1>
         </div>
     </div>

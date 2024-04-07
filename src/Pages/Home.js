@@ -20,8 +20,9 @@ import { PiFigmaLogoBold } from "react-icons/pi";
 import { SiTailwindcss } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithubSquare } from "react-icons/fa";
+import Navbar from '../components/Navbar';
 
-function Navbar() {
+function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -30,6 +31,7 @@ function Navbar() {
 
   return (
     <div>
+      <Navbar/>
        <div className='flex flex-col md:flex-row items-center px-4 md:px-12 lg:px-20 xl:px-36 pt-8 md:pt-12 pb-8 md:pb-14'>
         <div className='md:w-1/2'>
           <div className=''>
@@ -229,4 +231,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Home;

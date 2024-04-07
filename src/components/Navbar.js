@@ -3,8 +3,14 @@ import { BiMoon } from "react-icons/bi";
 import { GoLock } from 'react-icons/go';
 import Logo from '../assets/Logo.png';
 import { IoMenuSharp } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/login');
+  };
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,16 +28,16 @@ function Navbar() {
 
             <ul className="hidden lg:flex gap-9">
               <li className="mx-4 font-bold">
-                <a href="#" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Home</a>
+                <a href="/" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Home</a>
               </li>
               <li className="mx-4 font-bold">
                 <a href="/about" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">About Us</a>
               </li>
               <li className="mx-4 font-bold">
-                <a href="#" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Services</a>
+                <a href="/services" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Services</a>
               </li>
               <li className="mx-4 font-bold">
-                <a href="#" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Contact Us</a>
+                <a href="/contact" className="relative text-black hover:text-black transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-50">Contact Us</a>
               </li>
             </ul>
 
@@ -45,7 +51,7 @@ function Navbar() {
               <button className="text-black text-2xl"><BiMoon /></button>
               <p className=' text-2xl'>|</p>
               <button className="text-black text-2xl"><GoLock /></button>
-              <button className="hidden md:block text-white bg-black font-bold rounded-xl text-sm px-5 py-2.5">Login</button>
+              <button onClick={handleClick} className="hidden md:block text-white bg-black font-bold rounded-xl text-sm px-5 py-2.5">Login</button>
             </div>
           </div>
         </div>

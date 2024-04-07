@@ -12,10 +12,20 @@ import { PiDesktopTowerBold } from "react-icons/pi";
 import { PiWarning } from "react-icons/pi";
 import Calendar from '../components/Calendar';
 import { CgMenuGridO } from "react-icons/cg";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 function Dashboard() {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+    navigate('/booking');
+  };
+
+
   return (
     <div className='bg-gray-100'>
         <div className='flex flex-row-reverse gap-10'>
@@ -111,7 +121,7 @@ function Dashboard() {
                  </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10'>
-                    <button className='text-2xl flex gap-3'>
+                    <button onClick={handleClick} className='text-2xl flex gap-3'>
                     <p className='text-4xl'><RiBookLine /></p>
                     <h1>Booking</h1>
                     </button>

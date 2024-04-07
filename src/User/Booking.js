@@ -12,9 +12,20 @@ import { PiWarning } from "react-icons/pi";
 import { CiSquarePlus } from "react-icons/ci"; 
 import { CiSquareMinus } from "react-icons/ci";
 
+import { useNavigate } from 'react-router-dom';
 
 
 function Booking() {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate('/dashboard');
+    };
+    const handleBooking = () => {
+        navigate('/managebooking');
+      };
+
   return (
     <div className='bg-gray-100 bg-repeat'>
         <div className='flex flex-row-reverse gap-10'>
@@ -124,7 +135,7 @@ function Booking() {
                 </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10'>
-                    <button className='text-2xl flex gap-3'>
+                    <button onClick={handleClick} className='text-2xl flex gap-3'>
                     <p className='text-4xl'><MdOutlineDashboard /></p>
                     <h1>Dashboard</h1>
                 </button>
@@ -138,14 +149,14 @@ function Booking() {
                 </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10'>
-                    <button className='text-2xl flex gap-3'>
+                    <button onClick={handleBooking} className='text-2xl flex gap-3'>
                         <p className='text-4xl pt-4'><IoBookOutline /></p>
                         <h1>Manage<br/>Booking</h1>
                     </button>
                 </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10 '>
-                    <button className='flex text-2xl gap-3 mt-96'>
+                    <button className='flex text-2xl gap-3 mt-60'>
                         <p className='text-4xl'><PiArrowUDownRightLight /></p>
                         <h1>Sign-out</h1>
                     </button>
