@@ -13,6 +13,7 @@ import { PiWarning } from "react-icons/pi";
 import Calendar from '../components/Calendar';
 import { CgMenuGridO } from "react-icons/cg";
 import { useNavigate } from 'react-router-dom';
+import Input from 'postcss/lib/input';
 
 
 
@@ -68,6 +69,72 @@ function ManageBooking() {
 
                 <div className='pt-8'>
                     <div className='border w-[1000px] h-[400px] bg-white rounded-xl [box-shadow:0px_4px_4px_0px_#0000001A]'>
+                      <div className='flex justify-between pt-4'>
+                        <h1 className='text-2xl font-bold pl-6'>All bookings | History</h1>
+                        <div className='pr-6'>
+                          <input className='rounded-xl px-3 py-5 border-[1px] border-[solid] border-[#000000] h-10 w-[100%]'
+                            type="text"
+                            placeholder=" Search bookings        🔍"
+                             />
+                          </div>
+                      </div>
+
+                          <div className='border-[1px] rounded-xl ml-6 mt-5 border-[solid] border-[#000000] w-[95%] h-[10%] bg-[#EEEEEE]'>
+                            <div className='flex justify-center gap-[45px] pt-2 text-normal'>
+                              <h1>ID</h1>
+                              <h1>|</h1>
+                              <h1>Name</h1>
+                              <h1>|</h1>
+                              <h1>Booking Number</h1>
+                              <h1>|</h1>
+                              <h1>Check in</h1>
+                              <h1>|</h1>
+                              <h1>Check out</h1>
+                              <h1>|</h1>
+                              <h1>Status</h1>
+                            </div>
+                          </div>
+
+                          <div className='border-[0.5px] border-[solid] border-[#000000] w-[95%] h-[65%] rounded-xl mt-3 ml-6'>
+                            <div className=' rounded-xl ml-5 mt-5 border-none w-[95%] h-[15%] bg-[#EEEEEE]' >
+                              <div className='flex justify-center gap-20 pt-2 pl-3 text-normal'>
+                                  <h1>1</h1>
+                                  <h1>John</h1>
+                                  <h1 className='pl-12'>123456789</h1>
+                                  <h1>March 22, 2024</h1>
+                                  <h1>March 23, 2024</h1>
+                                  <h1>Done</h1>
+                              </div>
+                            </div>
+
+                            <div className=' rounded-xl ml-5 mt-5 border-none w-[95%] h-[15%] bg-[#EEEEEE]' >
+                            <div className='flex justify-center gap-20 pt-2 pl-3 text-normal'>
+                                  <h1>2</h1>
+                                  <h1>John</h1>
+                                  <h1 className='pl-12'>123456789</h1>
+                                  <h1>March 22, 2024</h1>
+                                  <h1>March 23, 2024</h1>
+                                  <h1>Done</h1>
+                              </div>
+                            </div>
+
+                            <div className=' rounded-xl ml-5 mt-5 border-none w-[95%] h-[15%] bg-[#EEEEEE]' >
+                            <div className='flex justify-center gap-20 pt-2 pl-3 text-normal'>
+                                  <h1>3</h1>
+                                  <h1>John</h1>
+                                  <h1 className='pl-12'>123456789</h1>
+                                  <h1>March 22, 2024</h1>
+                                  <h1>March 23, 2024</h1>
+                                  <h1>Done</h1>
+                              </div>
+                            </div>
+                         </div>
+                          
+                      
+                        
+                  
+
+
                     </div>
                 </div>
                

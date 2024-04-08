@@ -13,7 +13,7 @@ import ManageBooking from './User/ManageBooking';
 
 function App() {
   return (
-    <div>
+  <div>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,17 +28,7 @@ function App() {
         <Route path="/managebooking" element={<ManageBooking/>} />
       </Routes>
     </Router> 
-
-
-      {/* <AuthenticateSuccess/> */}
-      {/* <Authenticate/> */}
-      {/* <Login/> */}
-      {/* <Dashboard/> */}
-      {/* <Booking/> */}
-      {/* <About/> */}
-      {/* <Home/> */}
-     
-    </div>
+  </div>
   
   );
 }

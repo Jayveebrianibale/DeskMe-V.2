@@ -24,6 +24,9 @@ function Dashboard() {
     const handleClick = () => {
     navigate('/booking');
   };
+  const handleManagebooking = () => {
+    navigate('/managebooking');
+  };
 
 
   return (
@@ -128,7 +131,7 @@ function Dashboard() {
                 </div>
 
                 <div className='flex font-bold text-2xl pb-8 pl-10'>
-                    <button className='text-2xl flex gap-3'>
+                    <button onClick={handleManagebooking} className='text-2xl flex gap-3'>
                         <p className='text-4xl pt-4'><IoBookOutline /></p>
                         <h1>Manage<br/>Booking</h1>
                     </button>
