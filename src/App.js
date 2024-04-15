@@ -10,6 +10,8 @@ import Authenticate from './Auth/Authenticate';
 import AuthenticateSuccess from './Auth/AuthenticateSuccess';
 import Dashboard from './User/Dashboard';
 import ManageBooking from './User/ManageBooking';
+// import AdminDashboard from './Admin/AdminDashboard';
+
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/managebooking" element={<ManageBooking/>} />
       </Routes>
     </Router> 
+
+    {/* <AdminDashboard/> */}
   </div>
   
   );
