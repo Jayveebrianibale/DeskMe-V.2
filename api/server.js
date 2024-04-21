@@ -1,13 +1,18 @@
+// server.js
+
 import express from 'express';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
 import cors from 'cors';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import createError from 'http-errors';
+import User from './models/User.js'; // Import your MongoDB model
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
 
 // MongoDB connection
 mongoose.connect('mongodb+srv://johmmackfaeldonia:uEt4sknwh5bseKnr@cluster0.smcs02p.mongodb.net/booking')
@@ -18,34 +23,26 @@ mongoose.connect('mongodb+srv://johmmackfaeldonia:uEt4sknwh5bseKnr@cluster0.smcs
         console.error('MongoDB connection error:', err);
     });
 
-
-// Define a simple schema and model
-const Schema = mongoose.Schema;
-const demoSchema = new Schema({
-    name: String,
-    age: Number
-});
-const DemoModel = mongoose.model('Demo', demoSchema);
-
-// Define routes
-app.get('/api/demo', async (req, res) => {
+// Define route to handle user login
+app.post('/api/login', async (req, res, next) => {
     try {
-        const demos = await DemoModel.find();
-        res.json(demos);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server Error' });
-    }
-});
+        const user = await User.findOne({ email: req.body.email });
+        if (!user) return next(createError(404, "Email doesn't exist in our system!"));
 
-app.post('/api/demo', async (req, res) => {
-    try {
-        const newDemo = new DemoModel(req.body);
-        await newDemo.save();
-        res.status(201).json(newDemo);
+        const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
+        if (!isPasswordCorrect) return next(createError(400, "Wrong password or email!"));
+
+        const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);
+
+        const { password, isAdmin, ...otherDetails } = user._doc;
+        res.cookie("access_token", token, {
+            httpOnly: true,
+        })
+        .status(200)
+        .json({ ...otherDetails });
+
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server Error' });
+        next(err);
     }
 });
 

@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { HiOutlineXMark } from "react-icons/hi2";
-import { FcGoogle } from "react-icons/fc";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleChange = (event) => {
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleChangePassword = (event) => {
     setPassword(event.target.value);
   };
 
@@ -16,10 +23,19 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/authenticate');
+  const handleClick = async () => {
+    try {
+      const response = await axios.post('/api/booking', { email, password });
+      if (response.status === 200) {
+        navigate('/authenticate');
+      }
+    } catch (error) {
+      if (error.response) {
+        setErrorMessage(error.response.data);
+      } else {
+        console.error('Error logging in:', error);
+      }
+    }
   };
 
   return (
@@ -34,16 +50,16 @@ function Login() {
             
             <div className='text-center'>
                 <div className='pb-5'>
-                    <input className='border border-black rounded-lg py-3 px-2 w-[80%]' name='email' placeholder='Username or email:'/>
+                    <input className='border border-black rounded-lg py-3 px-2 w-[80%]' name='email' value={email} onChange={handleChangeEmail} placeholder='Username or email:'/>
                 </div>
 
                 <div className='relative'>
-                    <input className='border border-black rounded-lg py-3 px-2 w-[80%]' type={showPassword ? 'text' : 'password'}
-                     id='password' value={password} onChange={handleChange} placeholder='Password:'/>
+                    <input className='border border-black rounded-lg py-3 px-2 w-[80%]' type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassword} placeholder='Password:'/>
                     <button className='absolute top-1/2 transform -translate-y-1/2 right-4 focus:outline-none pr-12' onClick={togglePasswordVisibility}>
                       {showPassword ? <BsEye />:<BsEyeSlash /> } 
                     </button>
                 </div>
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             </div>
 
             <div className='list-none ml-12 pt-2'>
@@ -59,7 +75,7 @@ function Login() {
             <h1><span>&#169;</span>2023 DeskMe, All right reserved. Privacy Policy <br/> and Terms & Conditions.</h1>
         </div>
     </div>
-  )
+  );
 }
 
 export default Login;
