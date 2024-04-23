@@ -7,22 +7,8 @@ import desksRoute from "./routes/desks.js"
 import floorsRoute from "./routes/floors.js"
 import reservationsRoute from "./routes/reservations.js"
 import cookieParser from "cookie-parser"
-import { connectToDatabase } from "./db.js";
 
 const app = express();
-
-async function main() {
-    try {
-        await connectToDatabase();
-        console.log('Connected to MongoDB database');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
-    }
-}
-
-main();
-
-
 dotenv.config()
 
 const connect = async () =>{

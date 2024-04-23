@@ -25,14 +25,13 @@ function Login() {
 
   const handleClick = async () => {
     try {
-      const response = await axios.post('/api/booking', { email, password });
+      const response = await axios.post('/api/login', { email, password });
       if (response.status === 200) {
         navigate('/authenticate');
       }
     } catch (error) {
       if (error.response) {
         setErrorMessage(error.response.data);
-      } else {
         console.error('Error logging in:', error);
       }
     }
@@ -63,7 +62,7 @@ function Login() {
             </div>
 
             <div className='list-none ml-12 pt-2'>
-                <li className='font-medium'><a href='#'>Forgot password?</a></li>
+                <li className='font-medium'><a href='/'>Forgot password?</a></li>
             </div>
 
             <div className='text-center pt-10 pb-5'>
